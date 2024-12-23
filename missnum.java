@@ -3,8 +3,8 @@ public class missnum{
     public static void main(String[] args){
         int[] arr = {3,0,1};
         missnum obj = new missnum();
-        obj.cycle(arr);
-        //System.out.println(Arrays.toString(arr));
+        int yu = obj.cycle(arr);
+        System.out.println(yu);
     }
 
     public int cycle(int[] arr)
@@ -25,8 +25,6 @@ public class missnum{
             }
         }
         return arr.length;
-
-        
     }
 
     public void swap(int[] arr,int a,int b){
