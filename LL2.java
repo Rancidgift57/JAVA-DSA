@@ -27,7 +27,47 @@ public class LL{
         return val;
     }
 
+    public Node find(int value){
+        Node node = head;
+        while(node != null){
+            if(node.value == value){
+                return node;
+            }
+            node = node.next;
+        }
+        return node;
+    }
 
+    public int delete(int index){
+        if(index == 0){
+            return deletefirst();
+        }
+        if(index == size - 1){
+            return deletelast();
+        }
+        Node prev = get(index - 1);
+        int val = prev.next.value;
+        return val;
+    }
+
+    public int deletelast(){
+        if(size <= 1){
+            return deletelast();
+        }
+        Node secondlast = get(size - 2);
+        int val = tail.value;
+        tail = secondlast;
+        tail.next = null;
+        return val;
+    }
+
+public Node get(int index){
+    Node node = head;
+    for(int i = 0;i < index;i++){
+        node = node.next;
+    }
+    return node;
+}
     
 public void display(){
     Node temp = head;
@@ -37,6 +77,7 @@ public void display(){
     }
     System.out.print("END");
 }
+
 
     private class Node{
         private int value;
